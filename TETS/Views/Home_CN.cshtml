@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "2015Base.cshtml";
+}
+
+<div class="slide banner" data-slide='{"action":"click","fn":"banner_ext","time":"8000"}'>
+    @foreach (var b in CurrentPage.banner)
+    {
+        <div class="ban_c album">
+            <a href="@b.link">
+                @if (b.imagesrc != ""){<img src="@Umbraco.TypedMedia(b.imagesrc.ToString()).Url" />}<div class="bannertext">
+
+                @if (!string.IsNullOrWhiteSpace(b.description.ToString())){    <h1> @Html.Raw(@b.description)</h1>}
+                </div>
+            </a>
+        </div>
+    }
+</div>
+<div class="wrap bann_ext"> <ul class="l frontCover"></ul> </div>
+<script type="text/javascript" src="~/scripts/2015/script.js"></script>
+
+@CurrentPage.text

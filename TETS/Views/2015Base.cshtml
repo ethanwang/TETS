@@ -1,0 +1,145 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>@Umbraco.Field("pageTitle", recursive: true)</title>
+    <link rel="shortcut icon" href="images/common/favicon_TDU.png" />
+    <link rel="stylesheet" href="~/css/2015/style.css">
+    <link rel="stylesheet" href="~/css/2015/bannersc.css">
+    <script type="text/javascript" src="~/scripts/jquery-2.1.3.min.js"></script>
+
+
+    <script type="text/javascript" src="~/scripts/2015/zzsc.js"></script>
+    <script type="text/javascript" src="~/scripts/2015/koala.min.1.5.js"></script>
+
+    <script type="text/javascript">
+<!--
+        var timeout = 500;
+        var closetimer = 0;
+        var ddmenuitem = 0;
+
+        // open hidden layer
+        function mopen(id) {
+            // cancel close timer
+            mcancelclosetime();
+
+            // close old layer
+            if (ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+            // get new layer and show it
+            ddmenuitem = document.getElementById(id);
+            ddmenuitem.style.visibility = 'visible';
+
+        }
+        // close showed layer
+        function mclose() {
+            if (ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+        }
+
+        // go close timer
+        function mclosetime() {
+            closetimer = window.setTimeout(mclose, timeout);
+
+        }
+
+        // cancel close timer
+        function mcancelclosetime() {
+            if (closetimer) {
+                window.clearTimeout(closetimer);
+                closetimer = null;
+            }
+        }
+
+        // close layer when click-out
+        document.onclick = mclose; 
+// -->
+    </script>
+    <style type="text/css">
+        .indexp2
+        {
+            width: 1366px;
+            margin: 0px auto;
+            padding: 30px 0px;
+            background: #d8d8d8;
+        }
+        .indexp2 table
+        {
+            width: 1280px;
+            margin:0px auto;
+        }
+        .indexp2 td
+        {
+            text-align: left;
+            vertical-align: top;
+            line-height: 24px;
+        }
+        .indexp2 td p
+        {
+            margin: 10px 0px 0px 0px;
+            padding: 0px 20px;
+            line-height: 24px;
+        }
+        .indexp2 td ul{ margin:10px 10px 0px 35px; padding:0px;}
+        .indexp2 td li
+        { list-style-type:disc;	list-style-position: inside; margin:0px; padding:0px; line-height:24px;}
+    </style>
+</head>
+<body>
+
+
+		
+ <div>
+        
+  <header id="header" class="header">
+    <div class="header_icon">
+      <div class="header_top_icon">
+      <div class="cechages"><a href="http://www.teradatachina.com/cn/index.aspx">简体中文</a><a href="http://www.teradatachina.com/en/index.aspx" >English</a></div>
+        <div class="zhsocials"><a class="zha1" href="weixin.aspx" target="_blank"></a><a class="zha3" href="http://weibo.com/p/1006062711492184" target="_blank"></a><a class="zha2" href="https://www.facebook.com/Teradata.TW" target="_blank"></a><a class="zha4" href="http://www.teradata.com.cn">公司官网</a></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="navigation">
+      <div class="logodiv"><a href="index.aspx"></a></div>
+      <div class="navigation_bar" id="access" role="navigation" >
+        <ul id="sddm">
+          <li><a href="index.aspx"  class="active">首页</a></li>
+          <li><a href="programme.aspx" onMouseOver="mopen('m2')" onMouseOut="mclosetime()" id="m2_top" >大会日程</a>
+            <div id="m2" onMouseOver="mcancelclosetime()" onMouseOut="mclosetime()"> <a href="programme.aspx#agenda">日程安排</a> <a href="programme.aspx#speakers">演讲嘉宾</a></div>
+          </li>
+          <li><a href="Expo.aspx" onMouseOver="mopen('m3')" onMouseOut="mclosetime()" id="m3_top" >大会展示</a>
+            <div id="m3" onMouseOver="mcancelclosetime()" onMouseOut="mclosetime()"> <a href="Expo.aspx#expo">大会展示</a> <a href="Expo.aspx#partners">赞助商</a></div>
+          </li>
+          <li><a href="more.aspx" onMouseOver="mopen('m7')" onMouseOut="mclosetime()" id="m7_top">更多活动</a>
+            <div id="m7" onMouseOver="mcancelclosetime()" onMouseOut="mclosetime()"> <a href="big.aspx">大数据实验室</a> <a href="Communication.aspx">讲师交流</a> </div>
+          </li>
+          <li><a href="Conferenceinfo.aspx" onMouseOver="mopen('m4')" onMouseOut="mclosetime()" id="m4_top" >大会信息</a>
+            <div id="m4" onMouseOver="mcancelclosetime()" onMouseOut="mclosetime()"> <a href="Conferenceinfo.aspx#About">会议介绍</a> <a href="Conferenceinfo.aspx#Venue">大会场地</a> <a href="Conferenceinfo.aspx#FAQ">常见问题</a></div>
+          </li>
+          <li><a href="news.aspx">新闻中心</a> </li>
+          <li><a href="http://www.teradata.com.cn/company-careers/news-and-events/" target="_blank">往届回顾</a> </li>
+          
+          <li>
+            <input type="button" class="register" value="大会报名" onclick="javascript:window.location.href='register.aspx';">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+        <div class="clear"></div>
+
+     @RenderBody()
+    </div>
+    
+  <div class="clear"></div>
+<div id="footer" class="footer">
+  <div class="footercont">
+    <div class="footericon dark-bg"><a target="_blank" href="http://blogs.teradata.com/international/" title="Follow us on Blogger" class="a13_soc-blogger"></a><a target="_blank" href="https://www.facebook.com/TeradataINTL" title="Follow us on Facebook" class="a13_soc-facebook"></a><a target="_blank" href="http://www.linkedin.com/groups/Teradata-Events-in-Europe-Middle-3760240?mostPopular=&#038;gid=3760240" title="Follow us on Linkedin" class="a13_soc-linkedin"></a><a target="_blank" href="https://twitter.com/TeradataINTL" title="Follow us on Twitter" class="a13_soc-twitter"></a><a target="_blank" href="https://twitter.com/TeradataINTL" title="Follow us on Yelp" class="a13_soc-yelp"></a></div>
+    <div class="footerlink"><a href="http://www.teradata.com.cn/company-careers/about-us/" target="_blank">关于我们</a><a href="http://www.teradata.com.cn/company-careers/news-and-events/" target="_blank">新闻与活动</a><a href="http://www.teradata.com.cn/support-downloads/resources/" target="_blank">资源</a><a href="http://cn.teradata.com/privacy/" target="_blank">隐私</a><a href="http://www.teradata.com.cn/company-careers/contact-us/" target="_blank">联系我们</a><a href="http://www.teradata.com.cn/" target="_blank"><img src="images/common/logo_TD-white_70x16.png" width="70" height="16" alt=""></a></div>
+  </div>
+</div>
+
+</body>
+</html>
