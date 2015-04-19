@@ -1,0 +1,21 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "CBase.cshtml";
+}
+
+<div class="clear"></div>
+<div class="agenda">
+    <div class="sponsorlist">
+        <div class="sponsorpic">
+            <a href="@CurrentPage.companysite" ><img src="@Umbraco.Media(CurrentPage.photo).Url"></a>
+        </div>
+        <div class="sponsorinfo">
+            <p class="spbold">@CurrentPage.name</p>
+            @CurrentPage.introduction
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="agendalistback"><a href="/Expo#partners"  class="speakerlistbt"><img src="/images/common/leftjt.png" width="15" height="15" alt="">返回查看所有赞助商</a></div>
+
+</div>
+<div class="kong"></div>

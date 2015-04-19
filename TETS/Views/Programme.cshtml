@@ -1,0 +1,74 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "CBase.cshtml";
+}
+
+
+@{
+    var agenda = ((CurrentPage.agenda as string) + "").Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(x => x.AsInt(0)).AsEnumerable().Where(x => x > 0).ToArray();
+    var agenda_doc = Umbraco.Content(agenda);
+    
+    var speaker = ((CurrentPage.speaker as string) + "").Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(x => x.AsInt(0)).AsEnumerable().Where(x => x > 0).ToArray();
+    var speaker_doc = Umbraco.Content(speaker);
+    
+}
+
+
+@section head{
+<script type="text/javascript" src="~/scripts/2015/slider.js" ></script>
+<script type="text/javascript" src="~/scripts/2015/slider_options.js"></script>
+}
+
+<div class="agenda">
+    <h1> 日程安排<a name="agenda"></a> </h1>
+    <div class="dataarea">
+        <table cellpadding="0px" cellspacing="0px" border="0px">
+            <tr>
+                @foreach (var a in agenda_doc) { 
+                  var d=Convert.ToDateTime( a.date );
+                <td width="33%"> <div class="datalist"> <a class="data1bt datayellow" href="@a.Url"> 星期@(d.DayOfWeek)<br />@d.ToString(" yyyy年M月d日") </a> </div> </td>
+                }
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="clear"></div>
+<div class="speakers">
+    <h1> 演讲嘉宾<a name="speakers"></a> </h1>
+    <div class="speakerslist">
+        <p>
+            点击演讲嘉宾查看详情
+        </p>
+    </div>
+    <div class="cms-home">
+        <div class="indent-col-main">
+            <div class="std">
+                <br>
+            </div>
+            <div class="block-slider">
+                <div class="anythingSlider">
+
+                    <ul id="slider_list" class="products-grid">
+                        @foreach (var s in speaker_doc)
+                        {
+                            <li class="item first">
+                                <a class="product-image" title="@s.name" href="@s.Url">
+                                    <img src="@(Umbraco.Media(s.photo).Url + "?width=146&height=146&bgcolor=e3e5e7")"/> <p> <span> @s.name </span><br /> <span style="font-size: 11px; color: #333333;"> @s.title<br /> @s.company </span> </p>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+
+                </div>
+            </div>
+            <div id="left_but" class="box-left"> </div> <div id="right_but" class="box-right">  </div>
+        </div>
+    </div>
+    <div class="allspeaker">
+        <a href="speakerlist" class="allspeakerbt">查看所有演讲嘉宾</a>
+    </div>
+</div>
+<div class="kong"></div>
+
+
+

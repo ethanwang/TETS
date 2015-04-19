@@ -1,4 +1,28 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-    Layout = "2015Base.cshtml";
+    Layout = "CBase.cshtml";
 }
+<div class="agenda">
+    <div class="speakerlist">
+        <div class="speakerpic">
+            <div class="speakerpicdiv"><img src="@(Umbraco.Media(CurrentPage.photo).Url + "?width=250&height=312&bgcolor=fff")"></div>
+            <div class="speakertitle">
+                <p class="span1">@CurrentPage.name</p><p>
+                    <span class="span2"> @CurrentPage.title</span><br />@CurrentPage.company
+                </p>
+            </div>
+            <div class="Speakson">
+                <h1>演讲信息</h1>
+                <p><img src="images/programme/timeicon1.jpg" width="11" height="11" alt="" align="middle">@CurrentPage.speaktime<br /><img src="images/programme/messageicon.jpg" width="11" height="11" alt="" align="middle">@CurrentPage.speaksummary</p>
+
+            </div>
+            <div class="agendalistback2"><a href="/speakerlist#speakers"  class="speakerlistbt"><img src="images/programme/leftjt.png" width="15" height="15" alt="">返回查看所有演讲嘉宾</a></div>
+        </div>
+        <div class="speakerinfo">
+            <p><span style="color: rgb(84, 141, 212);"><strong>演讲嘉宾简介</strong></span></p>
+            @CurrentPage.introduction
+        </div>
+    </div>
+
+</div>
+<div class="kong"></div>

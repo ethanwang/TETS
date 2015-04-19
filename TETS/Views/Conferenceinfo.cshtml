@@ -1,0 +1,28 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "CBase.cshtml";
+}
+@section head{
+
+}
+<div class="agenda">
+    <h1>会议介绍<a name="About"></a></h1>
+    <div class="conferenceinfo">@Umbraco.Field("introduction")</div>
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div class="Venue">
+    @Umbraco.Field("field")
+</div>
+
+<div class="clear"></div>
+<div class="agenda" id="FAQ">
+    <h1>常见问题<a ></a></h1>
+     @{
+    for (int i = 1; i <= CurrentPage.qa.Count; i++){
+        var a = CurrentPage.qa[i-1];
+    <div class="faqlistq"><a onclick="isHidden('@i')">@i. @a.question<label id="@Html.AttributeEncode("lab"+i)">+</label></a></div>
+    <div  id="@Html.AttributeEncode("div"+i)"  class="faqlista" style="display:none;">@Html.Raw(a.answer)</div>
+    }}
+
+</div>

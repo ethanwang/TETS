@@ -1,0 +1,75 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "2015Base.cshtml";
+}
+@section head{
+<link rel="stylesheet" href="~/css/2015/second.css">
+<link type="text/css" rel="stylesheet" href="~/css/2015/zzsc.css">
+<script type="text/javascript">
+<!--
+        var timeout = 500;
+        var closetimer = 0;
+        var ddmenuitem = 0;
+
+        // open hidden layer
+        function mopen(id) {
+            // cancel close timer
+            mcancelclosetime();
+
+            // close old layer
+            if (ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+            // get new layer and show it
+            ddmenuitem = document.getElementById(id);
+            ddmenuitem.style.visibility = 'visible';
+
+        }
+        // close showed layer
+        function mclose() {
+            if (ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+        }
+
+        // go close timer
+        function mclosetime() {
+            closetimer = window.setTimeout(mclose, timeout);
+
+        }
+
+        // cancel close timer
+        function mcancelclosetime() {
+            if (closetimer) {
+                window.clearTimeout(closetimer);
+                closetimer = null;
+            }
+        }
+
+        // close layer when click-out
+        document.onclick = mclose;
+// -->
+</script>
+<script>
+    function isHidden(oDiv) {
+        var vDiv = document.getElementById("div" + oDiv);
+        var vLab = document.getElementById("lab" + oDiv);
+        vDiv.style.display = (vDiv.style.display == 'none') ? 'block' : 'none';
+        vLab.innerText = (vDiv.style.display == 'none') ? '+' : '—';
+    }
+</script>
+
+@if (IsSectionDefined("head")) { @RenderSection("head") }
+}
+
+
+
+<div class="secondbanner programmebanner">
+    <div class="se_b_text">
+        <h1>— 大会信息 —</h1>
+        <p><a href="index.aspx">首页</a> > 大会信息</p>
+    </div>
+</div>
+<div class="clear"></div>
+@RenderBody()
+
+
+
+

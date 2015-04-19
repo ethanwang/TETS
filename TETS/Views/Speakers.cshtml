@@ -1,4 +1,43 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-    Layout = "2015Base.cshtml";
+    Layout = "CBase.cshtml";
+
+   
+    var speakers_zhu =Umbraco.Content(  Model.Content.Children.Where(x => x.DocumentTypeAlias == "Speaker" && x.GetPropertyValue<string>("cda") == "主会场").Select(x=>x.Id));
+
+    var speakers_fen = Umbraco.Content(Model.Content.Children.Where(x => x.DocumentTypeAlias == "Speaker" && x.GetPropertyValue<string>("cda") == "分会场").Select(x => x.Id));
+    int row = speakers_zhu.Count() % 6 == 0 ? speakers_zhu.Count() / 6 : (speakers_zhu.Count() / 6) + 1;
 }
+
+<div class="agenda">
+    <h1>演讲嘉宾</h1>
+
+       <div class="agendatimeline"> <a onclick="isHidden('1')"> <label id="lab1">—</label>主会场</a></div>
+        @for (int r = 0; r < row; r++)
+        {
+            <div class="speakerlist" id="div@(r)" style="display:block">
+                <div class="speakerlisttr">
+                    @for(int j=0;j<6;j++){
+                     var ci=(r*6)+j;
+                     if (!(ci < speakers_zhu.Count())) { break; }
+                      var s = speakers_zhu[ci];
+                    <div class="speakerlistdiv">
+                        <div class="speakerlistdivpic"><a href="@s.Url"><img src="@(Umbraco.Media(s.photo).Url + "?width=150&height=187&bgcolor=fff")" border="0"></a></div>
+                        <div class="speakerlistdivinfo">
+                            <a href="@s.Url"><span class="span3">@s.name</span><br><span class="span4">@s.title</span><br /> @s.company</a>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+
+        }
+
+        <div class="clear"></div>
+    
+
+
+
+    <div class="agendalistback"><a href="programme#speakers" class="speakerlistbt"><img src="images/programme/leftjt.png" width="15" height="15" alt="">返回大会日程</a></div>
+</div>
+<div class="kong"></div>

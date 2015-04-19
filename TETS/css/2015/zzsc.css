@@ -1,0 +1,234 @@
+﻿.cms-home {
+	width:1080px;
+	margin:0px auto;
+}
+.cms-home .std {
+	DISPLAY: none
+}
+.cms-home .products-grid {
+	POSITION: relative;
+	BORDER-BOTTOM-STYLE: none
+}
+.cms-home .last.products-grid {
+	BORDER-BOTTOM-WIDTH: 0px
+}
+.cms-home .products-grid LI.item {
+	border-style: none;
+    padding: 0px;
+    POSITION: relative;
+	TEXT-ALIGN: center;
+	MARGIN: 0px;
+	WIDTH: 180px;
+	FLOAT: left;
+	HEIGHT: 200px;
+	}
+.cms-home .products-grid LI.first {
+	WIDTH: 180px
+}
+.cms-home .products-grid LI.last {
+	BORDER-RIGHT-STYLE: none;
+	WIDTH: 180px
+}
+.cms-home .product-image-block {
+	POSITION: relative;
+	MARGIN: 0px auto;
+	WIDTH: 180px
+}
+.cms-home .products-grid .product-image {
+	MARGIN: 0px auto 10px;
+	WIDTH: 180px;
+	DISPLAY: block;
+	HEIGHT: 220px
+}
+.cms-home .indent-col-main {
+	POSITION: relative;
+	width:1080px;
+	margin:10px auto;
+}
+.cms-home .products-grid BUTTON.button {
+	PADDING-BOTTOM: 0px;
+	BORDER-RIGHT-WIDTH: 0px;
+	MARGIN: 0px;
+	PADDING-LEFT: 0px;
+	WIDTH: auto;
+	PADDING-RIGHT: 0px;
+	BACKGROUND: none transparent scroll repeat 0% 0%;
+	BORDER-TOP-WIDTH: 0px;
+	BORDER-BOTTOM-WIDTH: 0px;
+	OVERFLOW: visible;
+	BORDER-LEFT-WIDTH: 0px;
+	CURSOR: pointer;
+	PADDING-TOP: 0px
+}
+.cms-home .products-grid BUTTON.button SPAN {
+	TEXT-ALIGN: center;
+	PADDING-BOTTOM: 0px;
+	TEXT-TRANSFORM: none;
+	PADDING-LEFT: 0px;
+	PADDING-RIGHT: 0px;
+	FONT: 11px/16px Arial, Helvetica, sans-serif;
+	WHITE-SPACE: nowrap;
+	BACKGROUND: none transparent scroll repeat 0% 0%;
+	FLOAT: left;
+	HEIGHT: 16px;
+	COLOR: #020202;
+	PADDING-TOP: 0px
+}
+.cms-home .products-grid BUTTON.button SPAN SPAN {
+	PADDING-BOTTOM: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-RIGHT: 0px;
+	BACKGROUND: none transparent scroll repeat 0% 0%;
+	PADDING-TOP: 0px
+}
+.std .subtitle {
+	PADDING-BOTTOM: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-RIGHT: 0px;
+	PADDING-TOP: 0px
+}
+.std OL.ol {
+	LIST-STYLE-POSITION: outside;
+	LIST-STYLE-TYPE: decimal;
+	PADDING-LEFT: 1.5em
+}
+.std UL.disc {
+	LIST-STYLE-POSITION: outside;
+	LIST-STYLE-TYPE: disc;
+	MARGIN: 0px 0px 10px;
+	PADDING-LEFT: 18px
+}
+.std DL DT {
+	FONT-WEIGHT: bold
+}
+.std DL DD {
+	MARGIN: 0px 0px 10px
+}
+.block-slider {
+	POSITION: relative;
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px 0px 0px 1px;
+	PADDING-LEFT: 0px;
+	WIDTH: 1080px;
+	PADDING-RIGHT: 0px;
+	OVERFLOW: hidden;
+	PADDING-TOP: 0px
+}
+.block-slider .box-top {
+	POSITION: relative;
+	MARGIN: 0px 35px 0px 0px;
+	WIDTH: 700px;
+	FLOAT: left;
+	HEIGHT: 483px;
+	COLOR: #616161;
+	FONT-SIZE: 1.2em;
+	OVERFLOW: hidden;
+	LEFT: 9px
+}
+.block-slider UL {
+	PADDING-BOTTOM: 0px;
+	LIST-STYLE-TYPE: none;
+	MARGIN: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-RIGHT: 0px;
+	HEIGHT: 255px;
+	OVERFLOW: hidden;
+	PADDING-TOP: 0px
+}
+.block-slider UL LI {
+	POSITION: relative;
+	PADDING-BOTTOM: 0px;
+	PADDING-LEFT: 0px;
+	WIDTH: 170px;
+	PADDING-RIGHT: 0px;
+	DISPLAY: block;
+	FLOAT: left;
+	HEIGHT: 483px;
+	PADDING-TOP: 0px
+}
+.block-slider UL LI A {
+	DISPLAY: block;
+	TEXT-DECORATION: none
+}
+.block-slider UL LI A:hover {
+	TEXT-DECORATION: none
+}
+.products-grid {
+	BORDER-BOTTOM: #cecece 1px solid;
+	POSITION: relative
+}
+.last.products-grid {
+	BORDER-BOTTOM-WIDTH: 0px
+}
+.products-grid LI.item {
+	TEXT-ALIGN: center;
+	PADDING-BOTTOM: 0px;
+	WIDTH: 180px;
+	FLOAT: left;
+}
+.item p {
+	margin:10px 0px;
+	font-size:12px;
+	font-weight:normal;
+	color:#333333;
+}
+.item p span {
+	color:#0079db;
+	font-size:14px;
+}
+.products-grid LI.first {
+	WIDTH: 182px
+}
+.products-grid LI.last {
+	BORDER-RIGHT-STYLE: none;
+	WIDTH: 180px
+}
+.product-image-block {
+	POSITION: relative;
+	MARGIN: 0px auto;
+	WIDTH: 180px;
+}
+.products-grid .product-image {
+	MARGIN: 0px auto 10px;
+	WIDTH: 180px;
+	DISPLAY: block;
+	HEIGHT: 220px
+}
+.products-grid:after {
+	LINE-HEIGHT: 0;
+	DISPLAY: block;
+	HEIGHT: 0px;
+	CLEAR: both;
+	FONT-SIZE: 0px;
+	OVERFLOW: hidden;
+	CONTENT: "."
+}
+#left_but {
+	Z-INDEX: 999;
+	POSITION: absolute;
+	MARGIN: 0px;
+	WIDTH: 16px;
+	BACKGROUND:transparent;
+	HEIGHT: 29px;
+	TOP: 103px;
+	CURSOR: pointer;
+	LEFT:-16px;
+}
+.over#left_but {
+	color:#0079db;
+	font-weight:bold;
+}
+#right_but {
+	POSITION: absolute;
+	MARGIN: 0px;
+	WIDTH: 16px;
+	BACKGROUND:transparent;
+	HEIGHT: 29px;
+	TOP: 103px;
+	CURSOR: pointer;
+	RIGHT:-16px
+}
+.over#right_but {
+	color:#0079db;
+	font-weight:bold;
+}

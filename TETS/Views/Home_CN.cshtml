@@ -3,6 +3,95 @@
     Layout = "2015Base.cshtml";
 }
 
+@section head{
+<link rel="stylesheet" href="~/css/2015/bannersc.css">
+<script type="text/javascript" src="~/scripts/2015/zzsc.js"></script>
+<script type="text/javascript" src="~/scripts/2015/koala.min.1.5.js"></script>
+
+<script type="text/javascript">
+<!--
+        var timeout = 500;
+        var closetimer = 0;
+        var ddmenuitem = 0;
+
+        // open hidden layer
+        function mopen(id) {
+            // cancel close timer
+            mcancelclosetime();
+
+            // close old layer
+            if (ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+            // get new layer and show it
+            ddmenuitem = document.getElementById(id);
+            ddmenuitem.style.visibility = 'visible';
+
+        }
+        // close showed layer
+        function mclose() {
+            if (ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+        }
+
+        // go close timer
+        function mclosetime() {
+            closetimer = window.setTimeout(mclose, timeout);
+
+        }
+
+        // cancel close timer
+        function mcancelclosetime() {
+            if (closetimer) {
+                window.clearTimeout(closetimer);
+                closetimer = null;
+            }
+        }
+
+        // close layer when click-out
+        document.onclick = mclose;
+// -->
+</script>
+<style type="text/css">
+    .indexp2 {
+        width: 1366px;
+        margin: 0px auto;
+        padding: 30px 0px;
+        background: #d8d8d8;
+    }
+
+        .indexp2 table {
+            width: 1280px;
+            margin: 0px auto;
+        }
+
+        .indexp2 td {
+            text-align: left;
+            vertical-align: top;
+            line-height: 24px;
+        }
+
+            .indexp2 td p {
+                margin: 10px 0px 0px 0px;
+                padding: 0px 20px;
+                line-height: 24px;
+            }
+
+            .indexp2 td ul {
+                margin: 10px 10px 0px 35px;
+                padding: 0px;
+            }
+
+            .indexp2 td li {
+                list-style-type: disc;
+                list-style-position: inside;
+                margin: 0px;
+                padding: 0px;
+                line-height: 24px;
+            }
+</style>
+
+}
+
+
 <div class="slide banner" data-slide='{"action":"click","fn":"banner_ext","time":"8000"}'>
     @foreach (var b in CurrentPage.banner)
     {

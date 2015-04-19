@@ -1,0 +1,25 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "CBase.cshtml";
+}
+@{
+    var sponsors = ((CurrentPage.sponsors as string) + "").Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(x => x.AsInt(0)).AsEnumerable().Where(x => x > 0).ToArray();
+    var spondors_doc=Umbraco.Content(sponsors);
+}
+
+@CurrentPage.expo
+
+<div class="clear"></div>
+<div class="partners">
+    <h1>赞助商<a name="partners"></a></h1>
+</div>
+<div class="sponsor">
+    <ul>
+        @foreach (var s in spondors_doc) { 
+            var alink=!string.IsNullOrWhiteSpace(s.link)?s.link:s.Url;
+        <li><a href="@alink"  title="@s.name"><img src="@Umbraco.Media(s.photo).Url"></a></li>
+        }
+    </ul>
+</div>
+<div class="kong clear"></div>
+  </div>
